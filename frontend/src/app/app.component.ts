@@ -25,6 +25,10 @@ export class AppComponent implements OnInit, OnDestroy {
         this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/svgs/clearquant-logo.svg"));
   }
 
+  onEvaluate(value: any): void {
+    alert('you submitted value: ' + Object.keys(value));
+  }
+
   ngOnInit() {
     this.gatesListSubs = this.gatesApi
       .getGates()

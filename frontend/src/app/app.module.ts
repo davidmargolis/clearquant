@@ -11,6 +11,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatCardModule} from '@angular/material/card';
 import { MatIconModule } from "@angular/material/icon";
 import {MatInputModule} from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
@@ -39,6 +40,7 @@ import { EvaluationResultsComponent } from './evaluation-results/evaluation-resu
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
+    MatCardModule,
     MatIconModule,
     MatInputModule,
     MatRippleModule,

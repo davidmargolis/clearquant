@@ -11,7 +11,8 @@
   </li>
 </ul>
 
-<app-evaluation-bar></app-evaluation-bar>
+<app-evaluation-bar (evaluate)="onEvaluate($event)"></app-evaluation-bar>
+<app-evaluation-results></app-evaluation-results>
 
 <div class="content" role="main">
 
