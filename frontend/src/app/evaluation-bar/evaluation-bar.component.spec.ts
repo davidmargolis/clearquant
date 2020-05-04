@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EquationEditorComponent } from './equation-editor.component';
+import { EvaluationBarComponent } from './evaluation-bar.component';
 
-describe('EquationEditorComponent', () => {
-  let component: EquationEditorComponent;
-  let fixture: ComponentFixture<EquationEditorComponent>;
+describe('EvaluationBarComponent', () => {
+  let component: EvaluationBarComponent;
+  let fixture: ComponentFixture<EvaluationBarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EquationEditorComponent ]
+      declarations: [ EvaluationBarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EquationEditorComponent);
+    fixture = TestBed.createComponent(EvaluationBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

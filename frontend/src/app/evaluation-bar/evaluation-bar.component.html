@@ -1,0 +1,16 @@
+<form [formGroup]="stateForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <mat-label>Quantum Expression</mat-label>
+        <input type="text" matInput placeholder="Express yourself" formControlName="state" required [matAutocomplete]="autoGroup"/>
+        <mat-autocomplete #autoGroup="matAutocomplete">
+            <mat-optgroup label="Recent">
+                <mat-option *ngFor="let name of stateOptions | async" [value]="name">
+                    {{name}}
+                </mat-option>
+            </mat-optgroup>
+        </mat-autocomplete>
+        <button type="submit" mat-stroked-button matSuffix aria-label="Evaluate" (click)="hide = !hide" color="accent">
+            =
+        </button>
+    </mat-form-field>
+</form>
