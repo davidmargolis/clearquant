@@ -9,13 +9,13 @@ import { QuantumCircuit } from 'quantum-circuit'
 export class EvaluationResultsComponent implements OnInit {
 
   constructor() {
-    var circuit = new QuantumCircuit(3);
+    // var circuit = new QuantumCircuit(3);
     // circuit.addGate(gateName, column, wire);
     // circuit.addGate(gateName, column, arrayOfWires);
-    circuit.addGate("h", 0, 1);
-    circuit.addGate("cx", 1, [1, 2]);
-    var svg = circuit.exportSVG(true);
-    circuit.run();
+    // circuit.addGate("h", 0, 1);
+    // circuit.addGate("cx", 1, [1, 2]);
+    // var svg = circuit.exportSVG(true);
+    // circuit.run();
    }
 
   ngOnInit(): void {

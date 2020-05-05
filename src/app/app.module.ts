@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GatesApiService } from './gates/gates-api.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -52,7 +51,6 @@ import { FooterComponent } from './footer/footer.component';
     MatRippleModule,
     MatToolbarModule,
   ],
-  providers: [GatesApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

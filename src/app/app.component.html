@@ -2,20 +2,11 @@
   <app-top-bar></app-top-bar>
 
   <main class="md-padding" layout="row" flex>
-    <div style="text-align:center">
-      <h1>Gates</h1>
-    </div>
-    <h2>Here are the gates created so far: </h2>
-    <ul>
-      <li *ngFor="let gate of gatesList">
-        {{gate.title}}
-      </li>
-    </ul>
     <app-evaluation-bar (evaluate)="onEvaluate($event)">
     </app-evaluation-bar>
     <app-evaluation-results></app-evaluation-results>
     <router-outlet></router-outlet>
-  </main>  
+  </main>
 
   <main class="content"></main>
 

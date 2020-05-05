@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
-import { GatesApiService } from './gates/gates-api.service';
-import { Gate } from './gates/gate.model';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 
@@ -12,11 +10,8 @@ import { DomSanitizer } from "@angular/platform-browser";
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'app';
-  gatesListSubs: Subscription;
-  gatesList: Gate[];
 
   constructor(
-    private gatesApi: GatesApiService, 
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
       this.matIconRegistry.addSvgIcon(
@@ -29,16 +24,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.gatesListSubs = this.gatesApi
-      .getGates()
-      .subscribe(res => {
-          this.gatesList = res;
-        },
-        console.error
-      );
   }
 
   ngOnDestroy() {
-    this.gatesListSubs.unsubscribe();
   }
 }
