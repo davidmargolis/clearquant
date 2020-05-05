@@ -1,43 +1,23 @@
-<app-top-bar></app-top-bar>
+<div fxLayout="column" fxFlexFill>
+  <app-top-bar></app-top-bar>
 
+  <main class="md-padding" layout="row" flex>
+    <div style="text-align:center">
+      <h1>Gates</h1>
+    </div>
+    <h2>Here are the gates created so far: </h2>
+    <ul>
+      <li *ngFor="let gate of gatesList">
+        {{gate.title}}
+      </li>
+    </ul>
+    <app-evaluation-bar (evaluate)="onEvaluate($event)">
+    </app-evaluation-bar>
+    <app-evaluation-results></app-evaluation-results>
+    <router-outlet></router-outlet>
+  </main>  
 
-<div style="text-align:center">
-  <h1>Gates</h1>
+  <main class="content"></main>
+
+  <app-footer></app-footer>
 </div>
-<h2>Here are the gates created so far: </h2>
-<ul>
-  <li *ngFor="let gate of gatesList">
-    {{gate.title}}
-  </li>
-</ul>
-
-<app-evaluation-bar (evaluate)="onEvaluate($event)"></app-evaluation-bar>
-<app-evaluation-results></app-evaluation-results>
-
-<div class="content" role="main">
-
-  <!-- Resources -->
-  <h2>Resources</h2>
-  <p>Here are some links to help you get started:</p>
-
-  <!-- Footer -->
-  <footer>
-    Love Angular?&nbsp;
-    <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
-      <div class="github-star-badge">
-        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-        Star
-      </div>
-    </a>
-    <a href="https://github.com/angular/angular" target="_blank" rel="noopener">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#1976d2" />
-        <path d="M0 0h24v24H0z" fill="none" /></svg>
-    </a>
-  </footer>
-
-</div>
-
-<router-outlet></router-outlet>

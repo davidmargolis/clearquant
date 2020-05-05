@@ -18,12 +18,11 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private gatesApi: GatesApiService, 
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer,
-    ) {
+    private domSanitizer: DomSanitizer) {
       this.matIconRegistry.addSvgIcon(
         `clearquant-logo`,
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/svgs/clearquant-logo.svg"));
-  }
+        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/img/clearquant-logo.svg"));
+    }
 
   onEvaluate(value: any): void {
     alert('you submitted value: ' + Object.keys(value));
