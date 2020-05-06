@@ -16,7 +16,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private domSanitizer: DomSanitizer) {
       this.matIconRegistry.addSvgIcon(
         `clearquant-logo`,
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/img/clearquant-logo.svg"));
+        this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/img/clearquant-logo.svg"));
     }
 
   onEvaluate(value: any): void {
