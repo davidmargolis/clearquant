@@ -1,7 +1,9 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
+// import { QuantumCircuit } from 'quantum-circuit'
+import QuantumCircuit from 'quantum-circuit'
 
 export const _filter = (opt: string[], value: string): string[] => {
   const filterValue = value.toLowerCase();
@@ -19,7 +21,7 @@ export class EvaluationBarComponent implements OnInit {
     state: '',
   });
 
-  @Output() evaluate: EventEmitter<string> = new EventEmitter<string>();
+  @Output() inputEvaluated: EventEmitter<QuantumCircuit> = new EventEmitter<QuantumCircuit>();
 
   state: string[] = [
     'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
@@ -36,8 +38,13 @@ export class EvaluationBarComponent implements OnInit {
       );
   }
 
-  onEvaluate(value: any): void {
-    this.evaluate.emit(value);
+  onSubmit(value: any): void {
+    var circuit = new QuantumCircuit(3);
+    circuit.importQASM("OPENQASM 2.0;\nimport \"qelib1.inc\";\nqreg q[2];\nh q[0];\ncx q[0],q[1];\n", function(errors) {
+      console.log(errors);
+    });
+
+    this.inputEvaluated.emit(circuit);
   }
 
   private _filterGroup(value: string): string[] {

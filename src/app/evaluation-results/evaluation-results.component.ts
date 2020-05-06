@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { QuantumCircuit } from 'quantum-circuit'
+import { Component, Input, OnInit } from '@angular/core';
+import QuantumCircuit from 'quantum-circuit'
+import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
 
 @Component({
   selector: 'app-evaluation-results',
@@ -7,20 +8,20 @@ import { QuantumCircuit } from 'quantum-circuit'
   styleUrls: ['./evaluation-results.component.scss']
 })
 export class EvaluationResultsComponent implements OnInit {
+  public drawing;
+
+  @Input()
+  set circuit(value: QuantumCircuit) {
+    if (value !== undefined) {
+      alert('you submitted value: ' + Object.keys(value));
+      this.drawing = value.exportSVG(true);  
+    }
+  }
 
   constructor() {
-    // var circuit = new QuantumCircuit(3);
-    // circuit.addGate(gateName, column, wire);
-    // circuit.addGate(gateName, column, arrayOfWires);
-    // circuit.addGate("h", 0, 1);
-    // circuit.addGate("cx", 1, [1, 2]);
-    // var svg = circuit.exportSVG(true);
-    // circuit.run();
    }
 
   ngOnInit(): void {
   }
-
-  
 
 }

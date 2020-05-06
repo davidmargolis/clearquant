@@ -1,4 +1,4 @@
-<form #f="ngForm" [formGroup]="stateForm" (ngSubmit)="onEvaluate(f.value.state)">
+<form #f="ngForm" [formGroup]="stateForm" (ngSubmit)="onSubmit(f.value.state)">
     <mat-form-field>
         <mat-label>Quantum Expression</mat-label>
         <input type="text" matInput placeholder="Express yourself" formControlName="state" required [matAutocomplete]="autoGroup"/>

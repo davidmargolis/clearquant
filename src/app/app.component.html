@@ -2,9 +2,8 @@
   <app-top-bar></app-top-bar>
 
   <main class="md-padding" layout="row" flex>
-    <app-evaluation-bar (evaluate)="onEvaluate($event)">
-    </app-evaluation-bar>
-    <app-evaluation-results></app-evaluation-results>
+    <app-evaluation-bar (inputEvaluated)="onInputEvaluated($event)"></app-evaluation-bar>
+    <app-evaluation-results [circuit]="circuit"></app-evaluation-results>
     <router-outlet></router-outlet>
   </main>
 
