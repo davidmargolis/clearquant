@@ -7,34 +7,34 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { TextFieldModule } from '@angular/cdk/text-field'; 
+import { TextFieldModule } from '@angular/cdk/text-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { EvaluationBarComponent } from './evaluation-bar/evaluation-bar.component';
-import { EvaluationResultsComponent } from './evaluation-results/evaluation-results.component';
 import { FooterComponent } from './footer/footer.component';
 import { QuantumCircuitComponent } from './quantum-circuit/quantum-circuit.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { QasmInfoPanelComponent } from './qasm-info-panel/qasm-info-panel.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
-    EvaluationBarComponent,
-    EvaluationResultsComponent,
     FooterComponent,
     QuantumCircuitComponent,
+    QasmInfoPanelComponent,
   ],
   exports: [
   ],
@@ -50,11 +50,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatAutocompleteModule,
     MatCardModule,
     MatDividerModule,
+    MatExpansionModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
     MatRippleModule,
     MatToolbarModule,
+    MatTooltipModule,
     NgbModule,
   ],
   bootstrap: [AppComponent]

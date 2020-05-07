@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EvaluationBarComponent } from './evaluation-bar.component';
+import { QasmInfoPanelComponent } from './qasm-info-panel.component';
 
-describe('EvaluationBarComponent', () => {
-  let component: EvaluationBarComponent;
-  let fixture: ComponentFixture<EvaluationBarComponent>;
+describe('QasmInfoPanelComponent', () => {
+  let component: QasmInfoPanelComponent;
+  let fixture: ComponentFixture<QasmInfoPanelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EvaluationBarComponent ]
+      declarations: [ QasmInfoPanelComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EvaluationBarComponent);
+    fixture = TestBed.createComponent(QasmInfoPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

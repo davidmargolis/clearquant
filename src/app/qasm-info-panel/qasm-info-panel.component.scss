@@ -1,0 +1,13 @@
+#top-tile {
+    border-color: blue($color: #000000);
+    border: solid 10px;
+}
+
+
+.top-tile {
+    border-bottom: solid 10px gray;
+}
+
+.bottom-tile {
+    border-top: solid 10px gray;
+}
