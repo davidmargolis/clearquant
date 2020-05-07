@@ -29,7 +29,7 @@ export class QuantumCircuitComponent implements OnInit {
 
   update() {
     this.circuit.run();
-    alert(this.circuit.measureAll());
+    console.log("Measurements: " + JSON.stringify(this.circuit.measureAll()));
     this.updateDrawing();
     this.updateExpressionBar();
   }
