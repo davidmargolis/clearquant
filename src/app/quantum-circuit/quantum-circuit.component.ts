@@ -9,7 +9,7 @@ import QuantumCircuit from 'quantum-circuit';
   styleUrls: ['./quantum-circuit.component.scss']
 })
 export class QuantumCircuitComponent implements OnInit {
-  circuit = new QuantumCircuit();
+  circuit = new QuantumCircuit(0);
   textInput = new FormControl('', QasmValidatorDirective(this.circuit));
 
   parseErrors = [];
@@ -19,16 +19,17 @@ export class QuantumCircuitComponent implements OnInit {
 
   ngOnInit() {
     this.update();
-  }
-
-  onSubmit(value: string) {
-    this.circuit.importQASM(value, function (errors) {
-      console.log(errors);
+    this.textInput.valueChanges.subscribe(value => {
+      if (this.textInput.valid) {
+        this.circuit.run();
+        this.updateDrawing();
+      }
     });
-    this.updateDrawing();
   }
 
   update() {
+    this.circuit.run();
+    alert(this.circuit.measureAll());
     this.updateDrawing();
     this.updateExpressionBar();
   }

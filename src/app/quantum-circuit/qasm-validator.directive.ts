@@ -7,8 +7,6 @@ class ErrorType {
   msg: number;
 }
 
-import isArray from "isarray";
-
 export function QasmValidatorDirective(circuit: QuantumCircuit): ValidatorFn {
   return (control: AbstractControl): string[] => {
     let theErrors: ErrorType[];
