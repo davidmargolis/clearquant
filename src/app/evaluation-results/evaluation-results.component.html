@@ -1,8 +1,9 @@
-<mat-card *ngIf="drawing !== undefined">
+<mat-card>
+<!-- <mat-card *ngIf="drawing !== undefined"> -->
     <mat-card-header>
         <mat-card-title>Circuit Drawing</mat-card-title>
     </mat-card-header>
-    <mat-icon id="drawing">
-        {{drawing}}
-    </mat-icon>
+    <div class="img-container">
+        <mat-icon id="drawing" aria-label="Circuit Drawing"></mat-icon>
+    </div>
 </mat-card>

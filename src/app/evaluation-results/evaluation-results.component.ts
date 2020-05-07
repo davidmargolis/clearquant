@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import QuantumCircuit from 'quantum-circuit'
-import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import QuantumCircuit from 'quantum-circuit';
 
 @Component({
   selector: 'app-evaluation-results',
@@ -8,20 +7,27 @@ import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
   styleUrls: ['./evaluation-results.component.scss']
 })
 export class EvaluationResultsComponent implements OnInit {
-  public drawing;
-
+   _circuit: QuantumCircuit;
   @Input()
   set circuit(value: QuantumCircuit) {
-    if (value !== undefined) {
-      alert('you submitted value: ' + Object.keys(value));
-      this.drawing = value.exportSVG(true);  
-    }
+    alert(value.numQubits);
+    this._circuit = value;
+    this.updateDrawing();
   }
+  get circuit(): QuantumCircuit {
+    return this._circuit;
+  }
+  @Output() circuitUpdated: EventEmitter<QuantumCircuit> = new EventEmitter<QuantumCircuit>();
+
 
   constructor() {
-   }
+  }
 
   ngOnInit(): void {
+  }
+
+  updateDrawing() {
+    document.getElementById("drawing").innerHTML = this._circuit.exportSVG(true);
   }
 
 }

@@ -1,0 +1,19 @@
+.img-container {
+    overflow-x: auto;
+}
+
+mat-icon {
+    padding-bottom: 15px;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+}

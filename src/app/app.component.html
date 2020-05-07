@@ -1,9 +1,8 @@
 <div fxLayout="column" fxFlexFill>
   <app-top-bar></app-top-bar>
 
-  <main class="md-padding" layout="row" flex>
-    <app-evaluation-bar (inputEvaluated)="onInputEvaluated($event)"></app-evaluation-bar>
-    <app-evaluation-results [circuit]="circuit"></app-evaluation-results>
+  <main layout="row" flex>
+    <app-quantum-circuit></app-quantum-circuit>
     <router-outlet></router-outlet>
   </main>
 

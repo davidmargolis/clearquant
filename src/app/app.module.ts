@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { TextFieldModule } from '@angular/cdk/text-field'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -22,6 +23,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { EvaluationBarComponent } from './evaluation-bar/evaluation-bar.component';
 import { EvaluationResultsComponent } from './evaluation-results/evaluation-results.component';
 import { FooterComponent } from './footer/footer.component';
+import { QuantumCircuitComponent } from './quantum-circuit/quantum-circuit.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -31,6 +34,7 @@ import { FooterComponent } from './footer/footer.component';
     EvaluationBarComponent,
     EvaluationResultsComponent,
     FooterComponent,
+    QuantumCircuitComponent,
   ],
   exports: [
   ],
@@ -40,6 +44,7 @@ import { FooterComponent } from './footer/footer.component';
     HttpClientModule,
     BrowserAnimationsModule,
     DragDropModule,
+    TextFieldModule,
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
@@ -50,6 +55,7 @@ import { FooterComponent } from './footer/footer.component';
     MatListModule,
     MatRippleModule,
     MatToolbarModule,
+    NgbModule,
   ],
   bootstrap: [AppComponent]
 })

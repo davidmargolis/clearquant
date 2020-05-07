@@ -1,0 +1,21 @@
+<div>
+    <mat-form-field>
+        <h2>
+            <mat-label>Quantum Expression</mat-label>
+        </h2>
+        <textarea cdkTextareaAutosize required matInput placeholder="Express yourself"
+            [formControl]="textInput"></textarea>
+        <ngb-alert type="danger" *ngIf="textInput.invalid && (textInput.dirty || textInput.touched)">
+            {{textInput.errors[0]}}
+        </ngb-alert>
+    </mat-form-field>
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Circuit Drawing</mat-card-title>
+        </mat-card-header>
+        <div class="img-container">
+            <mat-icon id="drawing" aria-label="Circuit Drawing"></mat-icon>
+        </div>
+    </mat-card>
+</div>
