@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { QuantumCircuitComponent } from './quantum-circuit.component';
+import { QuantumCircuitComponent } from "./quantum-circuit.component";
 
-describe('QuantumCircuitComponent', () => {
+describe("QuantumCircuitComponent", () => {
   let component: QuantumCircuitComponent;
   let fixture: ComponentFixture<QuantumCircuitComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuantumCircuitComponent ]
-    })
-    .compileComponents();
+      declarations: [QuantumCircuitComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('QuantumCircuitComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

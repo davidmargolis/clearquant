@@ -1,22 +1,53 @@
-<div>
+<mat-accordion>
+  f
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Quantum Expression
+      </mat-panel-title>
+      <mat-panel-description>
+        Describe circuit using QASM 2.0 notation
+      </mat-panel-description>
+    </mat-expansion-panel-header>
     <mat-form-field>
-        <h2>
-            <mat-label>Quantum Expression</mat-label>
-        </h2>
-        <textarea cdkTextareaAutosize required matInput placeholder="Express yourself"
-            [formControl]="textInput"></textarea>
-        <ngb-alert type="danger" *ngIf="textInput.invalid && (textInput.dirty || textInput.touched)">
-            {{textInput.errors[0]}}
-        </ngb-alert>
+      <textarea
+        cdkTextareaAutosize
+        required
+        matInput
+        placeholder="Express yourself"
+        [formControl]="textInput"
+      ></textarea>
+      <ngb-alert
+        [dismissible]="false"
+        type="danger"
+        *ngIf="textInput.invalid && (textInput.dirty || textInput.touched)"
+      >
+        {{ textInput.errors[0] }}
+      </ngb-alert>
     </mat-form-field>
-    <app-qasm-info-panel></app-qasm-info-panel>
-
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Circuit Drawing</mat-card-title>
-        </mat-card-header>
-        <div class="img-container">
-            <mat-icon id="drawing" aria-label="Circuit Drawing"></mat-icon>
-        </div>
-    </mat-card>
-</div>
+    <ngb-alert [dismissible]="false" type="primary">
+      OpenQASM is an intermediate quantum instructions language
+      <br />
+      <a href="https://github.com/Qiskit/openqasm/tree/master/examples/generic"
+        >Examples</a
+      >
+      - You can paste the file contents directly into the above input textbox.
+      <br />
+      <a href="https://github.com/Qiskit/openqasm/blob/master/spec/qasm2.rst"
+        >QASM Assembly Language</a
+      >
+      - This has very thorough documentation on the language.
+    </ngb-alert>
+  </mat-expansion-panel>
+  <mat-expansion-panel [expanded]="true">
+    <mat-panel-title>
+      Circuit Drawing
+    </mat-panel-title>
+    <mat-panel-description>
+      adfsdfsdfsfadsf
+    </mat-panel-description>
+    <div class="img-container">
+      <mat-icon id="drawing" aria-label="Circuit Drawing"></mat-icon>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,5 +1,5 @@
-import { AbstractControl, ValidatorFn } from '@angular/forms'
-import QuantumCircuit from 'quantum-circuit';
+import { AbstractControl, ValidatorFn } from "@angular/forms";
+import QuantumCircuit from "quantum-circuit";
 
 class ErrorType {
   line: string;
@@ -13,8 +13,8 @@ export function QasmValidatorDirective(circuit: QuantumCircuit): ValidatorFn {
     circuit.importQASM(control.value, function (errors: ErrorType[]) {
       theErrors = errors;
     });
-    return (theErrors.length > 0) ? theErrors.map(e =>
-      `Error (line ${e.line}, col ${e.col}): ${e.msg}`
-    ) : null;
+    return theErrors.length > 0
+      ? theErrors.map((e) => `Error (line ${e.line}, col ${e.col}): ${e.msg}`)
+      : null;
   };
-};
+}

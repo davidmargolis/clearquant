@@ -1,23 +1,26 @@
-textarea {
-    background-color: orange;
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+textarea[cdktextareaautosize].mat-input-element {
+  overflow: hidden;
 }
 
 .drawing-container {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 mat-icon {
-    padding-bottom: 15px;
+  padding-bottom: 15px;
 }
 
-.mat-form-field {
-    width: 100%;
+mat-form-field {
+  width: 100%;
 }
 
-.ng-valid[required], .ng-valid.required  {
-    border-left: 5px solid #42A948; /* green */
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42a948; /* green */
 }
 
-.ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442; /* red */
 }
