@@ -104,6 +104,7 @@ export class QuantumCircuitComponent implements OnInit {
     this.downloaderService
       .getTextFile(href)
       .subscribe((results) => this.textInput.setValue(results));
+    document.getElementById("drawing").scrollIntoView({ behavior: "smooth" });
   }
 
   update() {
