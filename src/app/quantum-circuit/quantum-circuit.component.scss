@@ -7,6 +7,13 @@ textarea[cdktextareaautosize].mat-input-element {
   overflow-x: auto;
 }
 
+button[mat-list-item] {
+  background-color: lightgrey;
+  border-color: black;
+  border-radius: 10px;
+  margin: 10px;
+}
+
 mat-icon {
   padding-bottom: 15px;
 }
