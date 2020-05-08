@@ -1,9 +1,6 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-
 textarea[cdktextareaautosize].mat-input-element {
   overflow: hidden;
   padding-bottom: 10px !important;
-  border-color: #ccc !important;
 }
 
 #drawing {
