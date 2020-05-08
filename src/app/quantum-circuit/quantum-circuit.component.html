@@ -1,5 +1,4 @@
-<mat-accordion>
-  f
+<div>
   <mat-expansion-panel [expanded]="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -39,15 +38,16 @@
       - This has very thorough documentation on the language.
     </ngb-alert>
   </mat-expansion-panel>
+
   <mat-expansion-panel [expanded]="true">
-    <mat-panel-title>
-      Circuit Drawing
-    </mat-panel-title>
-    <mat-panel-description>
-      adfsdfsdfsfadsf
-    </mat-panel-description>
-    <div class="img-container">
-      <mat-icon id="drawing" aria-label="Circuit Drawing"></mat-icon>
-    </div>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Circuit Drawing
+      </mat-panel-title>
+      <mat-panel-description>
+        Parsed from the above given quantum expression
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div ID="drawing" aria-label="Circuit Drawing"></div>
   </mat-expansion-panel>
-</mat-accordion>
+</div>

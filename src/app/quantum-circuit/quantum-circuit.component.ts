@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
 import { FormControl } from "@angular/forms";
 import { QasmValidatorDirective } from "./qasm-validator.directive";
 import QuantumCircuit from "quantum-circuit";
@@ -14,17 +15,18 @@ export class QuantumCircuitComponent implements OnInit {
     "",
     QasmValidatorDirective(this.circuit)
   );
+  @ViewChild("drawing") drawing: ElementRef;
 
   constructor() {}
 
   ngOnInit() {
     this.textInput.valueChanges.subscribe((value) => {
       if (this.textInput.valid) {
-        this.circuit.run();
         this.updateDrawing();
+        this.circuit.run();
       }
     });
-    this.update();
+    this.updateExpressionBar();
   }
 
   update() {
@@ -35,15 +37,12 @@ export class QuantumCircuitComponent implements OnInit {
   }
 
   updateDrawing() {
-    document.getElementById("drawing").innerHTML = this.circuit.exportSVG(true);
+    document.getElementById("drawing").innerHTML = this.circuit.exportSVG(
+      document.getElementById("drawing")
+    );
   }
 
   updateExpressionBar() {
     this.textInput.setValue(this.circuit.exportQASM());
-  }
-
-  // QuantumCircuit.prototype.exportQASM = function(comment, decompose, exportAsGateName, circuitReplacement, compatibilityMode, insideSubmodule)
-  saveCircuit(comment: string) {
-    this.circuit.exportQASM(name);
   }
 }

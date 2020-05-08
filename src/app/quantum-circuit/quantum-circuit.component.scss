@@ -2,9 +2,11 @@
 
 textarea[cdktextareaautosize].mat-input-element {
   overflow: hidden;
+  padding-bottom: 10px !important;
+  border-color: #ccc !important;
 }
 
-.drawing-container {
+#drawing {
   overflow-x: auto;
 }
 
